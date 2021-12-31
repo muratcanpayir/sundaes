@@ -19,6 +19,7 @@ test("is checbox checked and button enable", () => {
   const confirmButton = screen.getByRole("button", { name: "Confirm Order" });
 
   fireEvent.click(checkbox);
-  expect(checkbox).toBeChecked();
   expect(confirmButton).toBeEnabled();
+  fireEvent.click(checkbox);
+  expect(confirmButton).toBeDisabled();
 });
